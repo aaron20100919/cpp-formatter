@@ -191,22 +191,26 @@ void get_tables(vector<pair<string, string>> &tables, string str)
 int main(int argc, char *argv[])
 {
     vector<pair<string, string>> tables;
-    tables.push_back({">>=", " >>= "});
-    tables.push_back({"<<=", " <<= "});
-    tables.push_back({"->", " -> "});
-    tables.push_back({"==", " == "});
-    tables.push_back({"+=", " += "});
-    tables.push_back({"-=", " -= "});
-    tables.push_back({"*=", " *= "});
-    tables.push_back({"/=", " /= "});
-    tables.push_back({"%=", " %= "});
-    tables.push_back({"~=", " ~= "});
-    tables.push_back({"!=", " != "});
-    tables.push_back({"^=", " ^= "});
-    tables.push_back({"&=", " &= "});
-    tables.push_back({"<=", " <= "});
-    tables.push_back({">=", " >= "});
-    tables.push_back({"|=", " |= "});
+    tables.push_back({">>=", " _1 "});
+    tables.push_back({"<<=", " _2 "});
+    tables.push_back({"->", " _3 "});
+    tables.push_back({"==", " _4 "});
+    tables.push_back({"+=", " _5 "});
+    tables.push_back({"-=", " _6 "});
+    tables.push_back({"*=", " _7 "});
+    tables.push_back({"/=", " _8 "});
+    tables.push_back({"%=", " _9 "});
+    tables.push_back({"~=", " _10 "});
+    tables.push_back({"!=", " _11 "});
+    tables.push_back({"^=", " _12 "});
+    tables.push_back({"&=", " _13 "});
+    tables.push_back({"<=", " _14 "});
+    tables.push_back({">=", " _15 "});
+    tables.push_back({"|=", " _16 "});
+    tables.push_back({"||", " _17 "});
+    tables.push_back({"&&", " _18 "});
+    tables.push_back({"++", " _19 "});
+    tables.push_back({"--", " _20 "});
     tables.push_back({"[", " [ "});
     tables.push_back({"]", " ] "});
     tables.push_back({"(", " ( "});
@@ -215,9 +219,23 @@ int main(int argc, char *argv[])
     tables.push_back({"}", " } "});
     tables.push_back({":", " : "});
     tables.push_back({";", " ; "});
-    tables.push_back({".", " . "});
     tables.push_back({",", " , "});
     tables.push_back({"?", " ? "});
+    tables.push_back({">>", " >> "});
+    tables.push_back({"<<", " << "});
+    tables.push_back({"=", " = "});
+    tables.push_back({"+", " + "});
+    tables.push_back({"-", " - "});
+    tables.push_back({"*", " * "});
+    tables.push_back({"/", " / "});
+    tables.push_back({"%", " % "});
+    tables.push_back({"~", " ~ "});
+    tables.push_back({"!", " ! "});
+    tables.push_back({"^", " ^ "});
+    tables.push_back({"&", " & "});
+    tables.push_back({"<", " < "});
+    tables.push_back({">", " > "});
+    tables.push_back({"|", " | "});
 
     sort(tables.begin(), tables.end(), comp);
 
@@ -242,6 +260,29 @@ int main(int argc, char *argv[])
     }
     contant = read(filein);
 
+    contant = turn(tables, contant);
+    tables.clear();
+    tables.push_back({"_1", " >>= "});
+    tables.push_back({"_2", " <<= "});
+    tables.push_back({"_3", " -> "});
+    tables.push_back({"_4", " == "});
+    tables.push_back({"_5", " += "});
+    tables.push_back({"_6", " -= "});
+    tables.push_back({"_7", " *= "});
+    tables.push_back({"_8", " /= "});
+    tables.push_back({"_9", " %= "});
+    tables.push_back({"_10", " ~= "});
+    tables.push_back({"_11", " != "});
+    tables.push_back({"_12", " ^= "});
+    tables.push_back({"_13", " &= "});
+    tables.push_back({"_14", " <= "});
+    tables.push_back({"_15", " >= "});
+    tables.push_back({"_16", " |= "});
+    tables.push_back({"_17", " || "});
+    tables.push_back({"_18", " && "});
+    tables.push_back({"_19", " ++ "});
+    tables.push_back({"_20", " -- "});
+    sort(tables.begin(), tables.end(), comp);
     contant = turn(tables, contant);
 
     get_tables(tables, contant);
