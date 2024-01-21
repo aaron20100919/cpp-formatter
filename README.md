@@ -7,6 +7,7 @@
 - `formatter.cpp` 是标准格式化
 - `formatter_pro.cpp` 是加强版格式化
 - `chinese.cpp` 是英文标点符号转中文标点符号
+- `_formatter.cpp` 是将全部内容改成下划线
 
 ## 使用方法：
 
